@@ -81,13 +81,13 @@ hidden_nodes = 200
 output_nodes = 10
 
 # learning rate
-learning_rate = 0.01
+learning_rate = 0.30
 
 # create instance of neural network
 n = NeuralNetwork(input_nodes,hidden_nodes,output_nodes, learning_rate)
 
 # load the mnist training data CSV file into a list
-training_data_file = open("NeuralNetwork/FindNumber/makeyourownneuralnetwork-master/mnist_dataset/mnist_train_100.csv", 'r')
+training_data_file = open("mnist_dataset/mnist_train_100.csv", 'r')
 training_data_list = training_data_file.readlines()
 training_data_file.close()
 
@@ -111,9 +111,9 @@ for e in range(epochs):
 pass
 
 ## test the neural network with our own images
-# load image data from png files into an array
-print ("loading... NeuralNetwork/FindNumber/makeyourownneuralnetwork-master/my_own_images/2828_my_own_4.png")
-img_array = imageio.imread('NeuralNetwork/FindNumber/makeyourownneuralnetwork-master/my_own_images/2828_my_own_4.png', as_gray=True)
+# load image data from png files into an array. Loading '4'
+print ("loading... my_own_images/2828_my_own_4.png")
+img_array = imageio.imread('my_own_images/2828_my_own_4.png', as_gray=True)
     
 # reshape from 28x28 to list of 784 values, invert values
 img_data  = 255.0 - img_array.reshape(784)
